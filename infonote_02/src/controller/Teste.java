@@ -59,6 +59,20 @@ public class Teste {
 		Ped.setValorTotal(587.82);
 		Ped.setSituacao("Pago");
 		System.out.println(Ped.toString());
+		
+		Usuario user = new Usuario(1, "joseph", "climber", "joseph climber", "josephclimber@gmail.com",
+				"2222-3344");
+		
+		
+		public void mostrar() {
+			System.out.println("/n/nUsuario:/n");
+			System.out.println("Matricula: " + this.matricula);
+			System.out.println("Login: " + this.login);
+			System.out.println("Senha: " + this.senha);
+			System.out.println("Nome: " + this.nome);
+			System.out.println("E-mail: " + this.email);
+			System.out.println("Telefone: " + this.telefone);
+		}
 
 	}
 
