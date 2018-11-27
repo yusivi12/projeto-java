@@ -1,11 +1,11 @@
 package model;
 
 public class Notebook {
-	public int numeroNote;
-	public String modelo;
-	public String descricao;
-	public int estoque;
-	public double precoUnitario;
+	private int numeroNote;
+	private String modelo;
+	private String descricao;
+	private int estoque;
+	private double precoUnitario;
 
 	public int getNumeroNote() {
 		return numeroNote;

@@ -1,10 +1,10 @@
 package model;
 
 public class ItemDePedido {
-	public int qtde;
-	public double subtotal;
+	private int qtde;
+	private double subtotal;
 
-	public int getQtde() {
+	int getQtde() {
 		return qtde;
 	}
 

@@ -1,13 +1,13 @@
 package model;
 
 public class Endereco {
-	public String logradouro;
-	public String numero;
-	public String complemento;
-	public String bairro;
-	public String cidade;
-	public String estado;
-	public String cep;
+	private String logradouro;
+	private String numero;
+	private String complemento;
+	private String bairro;
+	private String cidade;
+	private String estado;
+	private String cep;
 
 	public String getLogradouro() {
 		return logradouro;

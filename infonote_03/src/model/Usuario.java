@@ -2,14 +2,14 @@ package model;
 
 public class Usuario {
 
-	public int matricula;
-	public String login;
-	public String senha;
-	public String nome;
-	public String email;
-	public String telefone;
+	private int matricula;
+	private String login;
+	private String senha;
+	private String nome;
+	private String email;
+	private String telefone;
 
-	public int getMatricula() {
+	int getMatricula() {
 		return matricula;
 	}
 
@@ -66,6 +66,7 @@ public class Usuario {
 		System.out.println("E-mail: " + this.email);
 		System.out.println("Telefone: " + this.telefone);
 	}
+
 	@Override
 	public String toString() {
 		return "Usuario [matricula=" + matricula + "\n login=" + login + ", senha=" + senha + ", nome=" + nome
