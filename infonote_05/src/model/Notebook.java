@@ -6,6 +6,8 @@ public class Notebook {
 	private String descricao;
 	private int estoque;
 	private double precoUnitario;
+	private String figura;
+	private String dataCadastro;
 
 	public int getNumeroNote() {
 		return numeroNote;
@@ -47,6 +49,22 @@ public class Notebook {
 		this.precoUnitario = precoUnitario;
 	}
 
+	public String getFigura() {
+		return figura;
+	}
+
+	public void setFigura(String figura) {
+		this.figura = figura;
+	}
+
+	public String getDataCadastro() {
+		return dataCadastro;
+	}
+
+	public void setDataCadastro(String dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
+
 	@Override
 	public String toString() {
 		return "Notebook [numeroNote=" + numeroNote + ",\n modelo=" + modelo + ", descricao=" + descricao + ", estoque="
@@ -58,13 +76,16 @@ public class Notebook {
 		super();
 	}
 
-	public Notebook(int numeroNote, String modelo, String descricao, int estoque, double precoUnitario) {
+	public Notebook(int numeroNote, String modelo, String descricao, int estoque, double precoUnitario, String figura,
+			String dataCadastro) {
 		super();
 		this.numeroNote = numeroNote;
 		this.modelo = modelo;
 		this.descricao = descricao;
 		this.estoque = estoque;
 		this.precoUnitario = precoUnitario;
+		this.figura = figura;
+		this.dataCadastro = dataCadastro;
 	}
 
 	public void mostrar() {
@@ -74,5 +95,7 @@ public class Notebook {
 		System.out.println("Descrição: " + this.descricao);
 		System.out.println("Estoque: " + this.estoque);
 		System.out.println("Preço Unitário: " + this.precoUnitario);
+		System.out.println("Figura: " + this.figura);
+		System.out.println("Data de Cadastro: " + this.dataCadastro);
 	}
 }

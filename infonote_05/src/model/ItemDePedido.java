@@ -4,7 +4,11 @@ public class ItemDePedido {
 	private int qtde;
 	private double subtotal;
 
-	private String notebook;
+	private Notebook notebook;
+
+	public Notebook getNotebook() {
+		return notebook;
+	}
 
 	int getQtde() {
 		return qtde;
@@ -22,11 +26,6 @@ public class ItemDePedido {
 		this.subtotal = subtotal;
 	}
 
-	public String setNotebook(String notebook) {
-		return notebook = notebook;
-
-	}
-
 	@Override
 	public String toString() {
 		return "ItemDePedido [qtde=" + qtde + "\n Subtotal=" + subtotal + ", getQtde()=" + getQtde()
@@ -38,15 +37,20 @@ public class ItemDePedido {
 		super();
 	}
 
-	public ItemDePedido(int qtde, double subtotal, String notebook) {
+	public ItemDePedido(int qtde, double subtotal) {
 		super();
 
 		this.qtde = qtde;
 		this.subtotal = subtotal;
-		
-		
-		this.notebook = notebook;
 
+	}
+
+	public ItemDePedido(int qtde, double subtotal, Notebook notebook) {
+		super();
+
+		this.qtde = qtde;
+		this.subtotal = subtotal;
+		this.notebook = notebook;
 	}
 
 	public void mostrar() {

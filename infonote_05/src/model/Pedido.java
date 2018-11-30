@@ -10,9 +10,12 @@ public class Pedido {
 	private Endereco enderecoEntrega;
 	private ItemDePedido itens[] = new ItemDePedido[10];
 
-	public String getEnderecoEntrega(String enderecoEntrega) {
+	public Endereco getEnderecoEntrega() {
 		return enderecoEntrega;
+	}
 
+	public ItemDePedido[] getItens() {
+		return itens;
 	}
 
 	public int getNumero() {

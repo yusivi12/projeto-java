@@ -6,6 +6,8 @@ public class Notebook {
 	public String descricao;
 	public int estoque;
 	public double precoUnitario;
+	private String figura;
+	private String dataCadastro;
 
 	public int getNumeroNote() {
 		return numeroNote;
@@ -45,6 +47,22 @@ public class Notebook {
 
 	public void setPrecoUnitario(double precoUnitario) {
 		this.precoUnitario = precoUnitario;
+	}
+
+	public String getFigura() {
+		return figura;
+	}
+
+	public void setFigura(String figura) {
+		this.figura = figura;
+	}
+
+	public String getDataCadastro() {
+		return dataCadastro;
+	}
+
+	public void setDataCadastro(String dataCadastro) {
+		this.dataCadastro = dataCadastro;
 	}
 
 	@Override

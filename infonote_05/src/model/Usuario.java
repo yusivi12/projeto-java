@@ -12,6 +12,14 @@ public class Usuario {
 	private Endereco enderecos[] = new Endereco[10];
 	private Pedido pedidos[] = new Pedido[10];
 
+	public Endereco[] getEnderecos() {
+		return enderecos;
+	}
+
+	public Pedido[] getPedidos() {
+		return pedidos;
+	}
+
 	int getMatricula() {
 		return matricula;
 	}
