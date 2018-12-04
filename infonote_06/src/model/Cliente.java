@@ -62,7 +62,8 @@ public class Cliente extends Usuario {
 
 	}
 
-	public Cliente(String login, String senha, int tipo, Endereco endereco) {
+	public Cliente(String login, String senha, int tipo, String codigoCliente, String nome, String email,
+			String telefone, Endereco endereco) {
 		super(login, senha, tipo);
 		this.codigoCliente = codigoCliente;
 		this.nome = nome;
@@ -82,8 +83,6 @@ public class Cliente extends Usuario {
 		return false;
 	}
 
-
-
 	public boolean inserirEndereco(Endereco end) {
 		for (int i = 0; i < enderecos.length; i++) {
 			if (enderecos[i] == null) {
@@ -97,19 +96,11 @@ public class Cliente extends Usuario {
 	public String toString() {
 		final String ENTER = "\n";
 		String retValue = "";
-		
-		retValue = "Informações sobre o cliente:" + ENTER +
-				super.toString()+
-				"Código do Cliente: " + codigoCliente + ENTER +
-				"Nome: " + email + ENTER +
-				"E-Mail: " + email + ENTER +
-				"Telefone: " + telefone + ENTER +
-				"Endereco: " + enderecos[0];
-		
+
+		retValue = "Informações sobre o cliente:" + ENTER + super.toString() + "Código do Cliente: " + codigoCliente
+				+ ENTER + "Nome: " + email + ENTER + "E-Mail: " + email + ENTER + "Telefone: " + telefone + ENTER
+				+ "Endereco: " + enderecos[0];
+
 		return retValue;
 	}
 }
-
-
-
-

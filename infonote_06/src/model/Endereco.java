@@ -68,12 +68,12 @@ public class Endereco {
 
 	@Override
 	public String toString() {
-		return "Endereco [logradouro=" + logradouro + "\n numero=" + numero + ", complemento=" + complemento
-				+ ", bairro=" + bairro + ", cidade=" + cidade + ", estado=" + estado + ", cep=" + cep
-				+ ", getLogradouro()=" + getLogradouro() + ", getNumero()=" + getNumero() + ", getComplemento()="
-				+ getComplemento() + ", getBairro()=" + getBairro() + ", getCidade()=" + getCidade() + ", getEstado()="
-				+ getEstado() + ", getCep()=" + getCep() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+		final String ENTER = "\n";
+		String retValue = "";
+		retValue = "Informações sobre Endereço:" + ENTER + "Logradouro: " + logradouro + ENTER + "Número: " + numero
+				+ ENTER + "Complemento: " + complemento + ENTER + "Bairro: " + bairro + ENTER + "Cidade: " + cidade
+				+ ENTER + "Estado: " + estado + ENTER + "CEP: " + cep + ENTER;
+		return retValue;
 	}
 
 	public Endereco() {

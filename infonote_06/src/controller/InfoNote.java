@@ -5,7 +5,7 @@ import util.*;
 import model.*;
 
 public class InfoNote {
-	UsuarioOld user;
+	Cliente user;
 
 	Notebook notebooks[] = new Notebook[10];
 	Pedido pedido;
@@ -31,9 +31,9 @@ public class InfoNote {
 	}
 
 	public void mostrarMenu() {
-		System.out.println("====================================================");
-		System.out.println("		InfoNote - Se não é Info não vendemos.		");
-		System.out.println("====================================================");
+		System.out.println("================================================================");
+		System.out.println("		InfoNote - Se não é Info não vendemos.					");
+		System.out.println("================================================================");
 		System.out.println("1 - Login");
 		System.out.println("2 - Cadastrar Cliente");
 		System.out.println("3 - Buscar Notebook");
@@ -59,25 +59,37 @@ public class InfoNote {
 	}
 
 	public void cadastrarUsuario() {
-		System.out.println("============================================");
-		System.out.println("		Usuário Cadastrado com sucesso		");
-		System.out.println("============================================");
+		System.out.println("=========================================================");
+		System.out.println("		Infonote - Cadastro de Usuário					 ");
+		System.out.println("=========================================================");
 
-		int matricula = Teclado.lerInt("Matrícula: ");
 		String login = Teclado.lerTexto("Login: ");
 		String senha = Teclado.lerTexto("Senha: ");
+		int tipo = 1;
+		String codigoCliente = Teclado.lerTexto("Código do Cliente: ");
 		String nome = Teclado.lerTexto("Nome: ");
 		String email = Teclado.lerTexto("E-mail: ");
 		String telefone = Teclado.lerTexto("Telefone: ");
+		
+		String logradouro = Teclado.lerTexto("Logradouro: ");
+		 String numero = Teclado.lerTexto("Número: ");
+		String complemento = Teclado.lerTexto("Complemento: ");
+		String bairro = Teclado.lerTexto("Bairro: ");
+		String cidade = Teclado.lerTexto("Cidade: ");
+		String estado = Teclado.lerTexto("Estado: ");
+		String cep = Teclado.lerTexto("CEP: ");
 
-		user = new UsuarioOld(matricula, login, senha, nome, email, telefone);
-
+		
+		Endereco endereco = new Endereco (logradouro, numero, complemento, bairro, cidade, estado, cep);
+		
+		Cliente cli = new Cliente (login, senha, tipo, codigoCliente, nome, email, telefone, endereco);
+		
 		System.out.println("============================================");
 		System.out.println("		Usuário Cadastrado com Sucesso.		");
 		System.out.println("============================================");
 
-		System.out.println(user);
-
+		System.out.println(cli);
+		System.out.println(endereco);
 	}
 
 	public void buscarNotebook() {
@@ -94,7 +106,6 @@ public class InfoNote {
 
 	}
 
-	@SuppressWarnings("unlikely-arg-type")
 	public void inserirNotebook() {
 		String numeroNote = Teclado.lerTexto("Informe o número do notebook" + " para compra: ");
 
