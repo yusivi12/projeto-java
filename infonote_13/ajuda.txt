@@ -1,0 +1,32 @@
+===================================
+Ajuda InfoNote
+===================================
+
+1) Efetuar Login
+Para efetuar o login é necessário
+que você esteja cadastrado no sis-
+tema.
+
+2) Cadastrar Cliente
+Será necessário colocar todos os
+campos
+
+3) Buscar Notebook
+Insira o nome do Notebook que deseja ver.
+
+4) Inserir Notebook no carrinho
+Colocar o Notebook no carrinho para dar 
+início ao processo de compra
+
+5) Remover Notebook do carrinho
+Retirar um Notebook do carrinho.
+
+6) Ver carrinho
+Ver todos os itens adicionados ao carrinho
+até o momento.
+
+7) Efetuar compra
+Finalizar o processo de compra.
+
+8) Sair
+Sair da sua conta.
