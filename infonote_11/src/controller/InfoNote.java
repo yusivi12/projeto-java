@@ -108,6 +108,18 @@ public class InfoNote {
 			}
 			System.out.println("Login ou senha inválido.");
 			efetuarLogin();
+		} else {
+
+			logado = funcionarioGlobal.validarLogin(login, senha);
+			if (logado) {
+				System.out.println("Login efetuado com sucesso!");
+			} else {
+				System.out.println("Usuário ou senha inválido.");
+
+			}
+			System.out.println("Login ou senha inválido.");
+			efetuarLogin();
+
 		}
 	}
 
@@ -236,16 +248,16 @@ public class InfoNote {
 			case EFETUAR_COMPRA:
 				if (!info.logado) {
 					System.out.println("Efetue login para efetuar compra");
-					break; 
-					
-			case AJUDA:
-				info.ajuda();
 					break;
 
 				} else {
 					info.efetuarCompra();
 					break;
 				}
+
+			case AJUDA:
+				info.ajuda();
+				break;
 
 			case SAIR:
 				System.out.println("Saída do Sistema");

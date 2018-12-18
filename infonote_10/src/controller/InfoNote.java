@@ -37,13 +37,13 @@ public class InfoNote {
 
 	public void mostrarMenu() {
 		System.out.println("================================================================");
-		System.out.println("		InfoNote - Se não é Info não vendemos." + DateFormat.getDateInstance(DateFormat.SHORT).format(new Date()) 
-				+ " " +
-				DateFormat.getTimeInstance().format(new Date()));
+		System.out.println("		InfoNote - Se não é Info não vendemos."
+				+ DateFormat.getDateInstance(DateFormat.SHORT).format(new Date()) + " "
+				+ DateFormat.getTimeInstance().format(new Date()));
 		if (logado == true) {
-			System.out.println("Seja bem vindo, " + cliente.getNomeInvertido());
+			System.out.println("Seja bem vindo, " + clienteGlobal.getNomeInvertido());
 		}
-		//System.out.println("================================================================");
+		// System.out.println("================================================================");
 
 		if (logado == true) {
 			System.out.println("Seja bem vindo, " + clienteGlobal.getNomeInvertido());
@@ -68,6 +68,17 @@ public class InfoNote {
 
 		if (clienteGlobal != null) {
 			logado = clienteGlobal.validarLogin(login, senha);
+			if (logado) {
+				System.out.println("Login efetuado com sucesso!");
+			} else {
+				System.out.println("Usuário ou senha inválido.");
+
+			}
+			System.out.println("Login ou senha inválido.");
+			efetuarLogin();
+		} else {
+
+			logado = funcionarioGlobal.validarLogin(login, senha);
 			if (logado) {
 				System.out.println("Login efetuado com sucesso!");
 			} else {

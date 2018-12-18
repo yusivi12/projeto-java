@@ -1,6 +1,7 @@
 package model;
 
 import java.text.NumberFormat;
+import java.util.Locale;
 
 public class Notebook {
 	private String serialNote;
