@@ -17,7 +17,7 @@ public class Funcionario extends Usuario implements IUsuario {
 
 	}
 
-	public Funcionario(String login, String senha, int tipo) {
+	public Funcionario(String login, String senha, int tipo,String matricula) {
 		super(login, senha, tipo);
 
 	}
