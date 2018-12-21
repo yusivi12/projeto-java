@@ -61,48 +61,51 @@ public class NotebookDAO {
 	}
 
 	public static Notebook[] buscarTodos() {
-		Notebook[] notebooks = null;
-
+		Notebook[] notebook = null;
+		NotebookDAO noteDAO = new NotebookDAO();
 		try {
-
+			// Crição do select
 			String sql = "Select * from notebook";
-
-			Conexao conex = new Conexao("jdbc:mysql://localhost:3306/infonote_13?useTimezone=true&serverTimezone=UTC", "com.mysql.cj.jdbc.Driver", "jeffrey","password");
-
+			// Obter a conexão com o banco de dados
+			Conexao conex = new Conexao(noteDAO.url, noteDAO.driver, noteDAO.login, noteDAO.senha);
 			Connection con = conex.obterConexao();
-
+			/*
+			 * Executa a confirmação direta de acesso ao banco pois não são necessárias
+			 * informações para a Query (caracter curinga)
+			 */
 			Statement comando = con.createStatement();
-
+			/*
+			 * ResultSet - Classe java que monta em memória uma matriz com a resposta das
+			 * linhas do banco de dados
+			 */
 			ResultSet rs = comando.executeQuery(sql);
-
-			notebooks = new Notebook[10];
-
+			// vetor de objetos
+			notebook = new Notebook[10];
+			/*
+			 * Passagem de linha de dados do ResultSet para o vetor de objetos (uma linha de
+			 * dados da matriz do ResultSet é copiada para um objeto no vetor contatos)
+			 */
 			int i = 0;
 			while (rs.next()) {
-				notebooks[i++] = new Notebook(
-						rs.getString("serialNote"),
-						rs.getString("modelo"),
-						rs.getString("descricao"),
-						rs.getInt("estoque"),
-						rs.getDouble("precoUnitario"),
-						rs.getString("figura"),
-						rs.getString("dataCadastro"));
+				notebook[i++] = new Notebook(rs.getString("serialnote"), rs.getString("modelo"),
+						rs.getString("descricao"), rs.getInt("estoque"), rs.getDouble("precoUnitario"),
+						rs.getString("figura"), rs.getString("dataCadastro"));
 			}
-
+			// É necessário encerrar o acesso ao banco para liberar a conexão
 			rs.close();
 			comando.close();
 			con.close();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		return notebooks;
+		return notebook;
 	}
 
-	public static Notebook excluir(int estoque) {
+	public static Notebook excluir(String serialNote, String modelo, String descricao, int estoque, double precoUnitario, String figura, String dataCadastro) {
 		Notebook notebook = null;
 		try {
 
-			String sql = "delete from notebook where id = ?";
+			String sql = "delete from notebook where serialNote = ?";
 
 			Conexao conex = new Conexao("jdbc:mysql://localhost:3306/infonote_13?useTimezone=true&serverTimezone=UTC",
 					"com.mysql.cj.jdbc.Driver", "jeffrey", "password");
@@ -111,7 +114,7 @@ public class NotebookDAO {
 
 			PreparedStatement comando = con.prepareStatement(sql);
 
-			comando.setInt(1, estoque);
+			comando.setString(1, serialNote);
 			comando.executeUpdate();
 
 		} catch (Exception e) {
@@ -121,11 +124,12 @@ public class NotebookDAO {
 
 	}
 
-	public static Notebook atualizar(String descricao, int estoque, double precoUnitario, String figura, String dataCadastro) {
+	public static Notebook atualizar(String descricao, String modelo, String descricao2, int estoque, double precoUnitario, String figura,
+			String dataCadastro) {
 		Notebook notebook = null;
 		try {
 
-			String sql = "update contato set mensagem = ? where id = ?";
+			String sql = "update contato set descricao =?, estoque =?, precoUnitario =?, figura =?, dataCadastro = ? where note = ?";
 
 			Conexao conex = new Conexao("jdbc:mysql://localhost:3306/infonote_13?useTimezone=true&serverTimezone=UTC",
 					"com.mysql.cj.jdbc.Driver", "jeffrey", "password");
@@ -134,7 +138,6 @@ public class NotebookDAO {
 
 			PreparedStatement comando = con.prepareStatement(sql);
 
-			
 			comando.setString(1, descricao);
 			comando.setInt(2, estoque);
 			comando.setDouble(3, precoUnitario);

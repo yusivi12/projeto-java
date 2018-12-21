@@ -12,6 +12,7 @@ public class Ajuda {
 		
 		try {
 
+		@SuppressWarnings("resource")
 		BufferedReader in = new BufferedReader(new FileReader(nomeArquivo));
 
 		String linha = "";

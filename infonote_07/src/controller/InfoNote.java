@@ -95,7 +95,7 @@ public class InfoNote {
 	public void buscarNotebook() {
 		for (int i = 0; i < notebooks.length; i++) {
 			if (notebooks[i] != null) {
-				System.out.println(notebooks[i].getNumeroNote() + "-----" + notebooks[i].getModelo());
+				System.out.println(notebooks[i].getSerialNote() + "-----" + notebooks[i].getModelo());
 			}
 		}
 
@@ -115,7 +115,7 @@ public class InfoNote {
 
 		Notebook aux = null;
 		for (int i = 0; i < notebooks.length; i++) {
-			if (notebooks[i] != null && numeroNote.equals(notebooks[i].getNumeroNote())) {
+			if (notebooks[i] != null && numeroNote.equals(notebooks[i].getSerialNote())) {
 				aux = notebooks[i];
 			}
 		}

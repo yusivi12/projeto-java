@@ -9,11 +9,11 @@ public class Notebook {
 	private String figura;
 	private String dataCadastro;
 
-	public String getNumeroNote() {
+	public String getSerialNote() {
 		return serialNote;
 	}
 
-	public void setNumeroNote(String serialNote) {
+	public void setSerialNote(String serialNote) {
 		this.serialNote = serialNote;
 	}
 

@@ -1,7 +1,7 @@
 package model;
 
 public class Notebook {
-	public int numeroNote;
+	public int serialNote;
 	public String modelo;
 	public String descricao;
 	public int estoque;
@@ -9,12 +9,12 @@ public class Notebook {
 	private String figura;
 	private String dataCadastro;
 
-	public int getNumeroNote() {
-		return numeroNote;
+	public int getSerialNote() {
+		return serialNote;
 	}
 
 	public void setNumeroNote(int numeroNote) {
-		this.numeroNote = numeroNote;
+		this.serialNote = numeroNote;
 	}
 
 	public String getModelo() {
@@ -67,7 +67,7 @@ public class Notebook {
 
 	@Override
 	public String toString() {
-		return "Notebook [numeroNote=" + numeroNote + ",\n modelo=" + modelo + ", descricao=" + descricao + ", estoque="
+		return "Notebook [numeroNote=" + serialNote + ",\n modelo=" + modelo + ", descricao=" + descricao + ", estoque="
 				+ estoque + ", precoUnitario=" + precoUnitario + ", getClass()=" + getClass() + ", hashCode()="
 				+ hashCode() + ", toString()=" + super.toString() + "]";
 	}

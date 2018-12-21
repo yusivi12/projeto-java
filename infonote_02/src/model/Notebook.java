@@ -1,7 +1,7 @@
 package model;
 
 public class Notebook {
-	public int numeroNote;
+	public int serialNote;
 	public String modelo;
 	public String descricao;
 	public int estoque;
@@ -9,12 +9,12 @@ public class Notebook {
 	private String figura;
 	private String dataCadastro;
 
-	public int getNumeroNote() {
-		return numeroNote;
+	public int getSerialNote() {
+		return serialNote;
 	}
 
 	public void setNumeroNote(int numeroNote) {
-		this.numeroNote = numeroNote;
+		this.serialNote = numeroNote;
 	}
 
 	public String getModelo() {
@@ -67,7 +67,7 @@ public class Notebook {
 
 	@Override
 	public String toString() {
-		return "Notebook [numeroNote=" + numeroNote + ",\n modelo=" + modelo + ", descricao=" + descricao + ", estoque="
+		return "Notebook [numeroNote=" + serialNote + ",\n modelo=" + modelo + ", descricao=" + descricao + ", estoque="
 				+ estoque + ", precoUnitario=" + precoUnitario + ", getClass()=" + getClass() + ", hashCode()="
 				+ hashCode() + ", toString()=" + super.toString() + "]";
 	}
@@ -78,7 +78,7 @@ public class Notebook {
 
 	public Notebook(int numeroNote, String modelo, String descricao, int estoque, double precoUnitario) {
 		super();
-		this.numeroNote = numeroNote;
+		this.serialNote = numeroNote;
 		this.modelo = modelo;
 		this.descricao = descricao;
 		this.estoque = estoque;
@@ -87,7 +87,7 @@ public class Notebook {
 
 	public void mostrar() {
 		System.out.println("\t\tNotebook:\t");
-		System.out.println("Numero Note: " + this.numeroNote);
+		System.out.println("Numero Note: " + this.serialNote);
 		System.out.println("Modelo: " + this.modelo);
 		System.out.println("Descrição: " + this.descricao);
 		System.out.println("Estoque: " + this.estoque);
